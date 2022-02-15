@@ -11,15 +11,15 @@ read -p "Enter Date (yyyy-mm-dd):" user_date
 if date=$(date -d "$user_date" '+%Y-%m-%d')
 then
    DIR_NAME="$date.tar.gz"
-   REMOTE_IP="evaluser@34.228.146.171"
-   KEY_NAME="devops-eval-evaluser.pem"
+   REMOTE_IP="USER_NAME@IP_ADDRESS"
+   KEY_NAME="YOUR-KEY"
    DIR="backups"
    ZIPPED_DIR="zipped"
    PARENT_DIR="/devops/eval"
    UNZIPPED_DIR="unzipped"
-   FILE_TO_EDIT="wp-config.php"
-   SEARCH_STRING="test_user_password"
-   REPLACE_STRING="replaced_password"
+   FILE_TO_EDIT="FILE_TO_EDIT"
+   SEARCH_STRING="SEARCH_STRING"
+   REPLACE_STRING="REPLACE_STRING"
    NEW_ARCHIVE="new-archive"
    LOG_FILE="backup-log.log"
 
