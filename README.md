@@ -9,7 +9,7 @@ This repository houses the shell script to download a backup directory from a re
 `define('DB_PASSWORD', 'test_user_password')`;
 - The script recreates the backup archive
 
-Finally, an entry, in a local text file named backup-log.log, should be created that the backup for XX date has been verified and downloaded. We can simply append new entries to the log file. If the file doesn’t exist, the script creates one. 
+Finally, an entry, in a local text file named backup-log.log, created that the backup for XX date has been verified and downloaded. We can simply append new entries to the log file. If the file doesn’t exist, the script creates one. 
 
 ## Before running the script you need to create a few directories.
 - Create dir name `backups` in the same directory where the script and key exists.
