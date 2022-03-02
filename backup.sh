@@ -23,12 +23,12 @@ then
    NEW_ARCHIVE="new-archive"
    LOG_FILE="backup-log.log"
 
-   # Looking for the file in remote directory.
+   # Looking for the directory in remote directory.
    #Step 2: verify whether the backup exists on the remote server.
    if [[ $(sudo ssh -i ${KEY_NAME} ${REMOTE_IP} find ${DIR} -name ${DIR_NAME}) ]]
    then
-      #Step 3: If the backup exists, it should be downloaded locally
-      echo "Remote File Exists! Going to download it to the directory named backups at the same level."
+      #Step 3: If the directory exists, it should be downloaded locally
+      echo "Remote directory Exists! Going to download it to the directory named backups at the same level."
       sudo scp -i  ${KEY_NAME} ${REMOTE_IP}:${PARENT_DIR}/${DIR}/${DIR_NAME} $PWD/${DIR}/${ZIPPED_DIR}
       echo "File Copied successfully."
       #If the copied file exists, Starts unzipping
@@ -49,11 +49,11 @@ then
                   #Continuing step 4 here to replace the password in the wp-config.php file
                   if (sed -i "s|$SEARCH_STRING|$REPLACE_STRING|g" ${DIR}/${UNZIPPED_DIR}/$date/${FILE_TO_EDIT})
                   then
-                     echo "String Replaced!"
+                     echo "String Replaced in the respective field!"
                      #Step 5: Recreate the backup archive in a dir named new_archive at the same level
                      if (tar -czpf ${DIR}/${NEW_ARCHIVE}/${DIR_NAME} ${DIR}/${UNZIPPED_DIR}/$date)
                      then
-                        echo "Creating log for verification"
+                        echo "Writing logs in file locally"
                         if [[ ! -f ${LOG_FILE} ]]
                         then
                            touch ${LOG_FILE}
