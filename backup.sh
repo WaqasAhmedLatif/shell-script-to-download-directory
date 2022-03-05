@@ -4,8 +4,8 @@ create_log(){
    echo "$(date) Backup for $date date has been verified and downloaded" >> ${LOG_FILE}
 }
 
-#Step 1: Take a date as input in the yyyy-mm-dd format
-read -p "Enter Date (yyyy-mm-dd):" user_date
+#Step 1: Take a date (backup compressed directory name) as input in the yyyy-mm-dd format
+read -p "Enter Date in the given format e.g (yyyy-mm-dd):" user_date
 
 #If date received from user does meet the required format
 if date=$(date -d "$user_date" '+%Y-%m-%d')
