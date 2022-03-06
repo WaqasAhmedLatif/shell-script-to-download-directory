@@ -1,5 +1,5 @@
 # shell-script-to-download-directory
-This repository houses the shell script to download a backup directory from a remote Linux server.
+This repository houses the shell script to download a backup compressed directory from a remote Linux server.
 # Here’s what the script should do,
 
 - Take a date as input in the `yyyy-mm-dd format`
